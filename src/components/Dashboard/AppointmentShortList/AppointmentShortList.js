@@ -12,9 +12,10 @@ const AppointmentShortList = ({appointments}) => {
             </thead>
             <tbody>
                 {
-                  appointments.map((appointment, index) => 
-                        
+                  appointments.map((appointment, index) =>
+
                     <tr>
+                        <td>{index + 1}</td>
                         <td>{appointment.name}</td>
                         <td>{appointment.phone}</td>
                         <td>{appointment.email}</td>

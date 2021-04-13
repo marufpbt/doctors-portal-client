@@ -4,7 +4,7 @@ import Doctor from '../Doctor/Doctor';
 const Doctors = () => {
     const [doctors, setDoctors] = useState([])
     useEffect( () => {
-        fetch('https://salty-plateau-71286.herokuapp.com/doctors')
+        fetch('https://fierce-savannah-93006.herokuapp.com/doctors')
         .then(res => res.json())
         .then(data => setDoctors(data))
     }, [])
@@ -17,7 +17,7 @@ const Doctors = () => {
                     {
                      doctors.map(doctor =><Doctor key={doctor._id} doctor={doctor} />)
                     }
-                    
+
                 </div>
             </div>
         </section>

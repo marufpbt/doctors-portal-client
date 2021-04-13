@@ -17,13 +17,12 @@ Modal.setAppElement('#root')
 
 const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
     const { register, handleSubmit, errors } = useForm();
-    
+
     const onSubmit = data => {
         data.service = appointmentOn;
         data.date = date;
         data.created = new Date();
-        
-        fetch('https://salty-plateau-71286.herokuapp.com/addAppointment', {
+        fetch('https://fierce-savannah-93006.herokuapp.com/addAppointment', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -32,12 +31,15 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
         .then(success => {
             if(success){
                 closeModal();
-                // alert('Appointment created successfully.');
+                alert('Appointment created successfully.');
+            }
+            else{
+                console.log("wrong")
             }
         })
 
 
-        
+
     }
 
     return (
